@@ -1,0 +1,1 @@
+rclone move /qBittorrent/downloads/"%N" G-Drive:qbit/"%N" --buffer-size=32M --drive-chunk-size 128M --ignore-existing --size-only --transfers=2 --checkers=4 --max-transfer 700G
