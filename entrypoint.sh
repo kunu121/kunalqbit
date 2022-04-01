@@ -3,7 +3,7 @@ echo "Scripted By DevAnaZ"
 echo "Orgin repository : https://github.com/developeranaz/qbittorrent-to-rclone-heroku"
 mkdir /.config
 mkdir /.config/rclone
-curl -L $RCLONE_CONFIG_IN_RAW_URL >/.config/rclone/rclone.conf
+curl -L $RCLONE_CONFIG >/.config/rclone/rclone.conf
 echo $PORT >/PORT
 #curl -L $QBITTORRENT_CONFIG_IN_RAW_URL
 cat /qBittorrent/config/qBittorrent.conf >/qBittorrent/qBittorrent.conf
