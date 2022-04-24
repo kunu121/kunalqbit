@@ -17,8 +17,12 @@ else
     echo "You can add selfping by adding a env var in heroku, SELFPING and correspondingly its value as your appname or appurl"
     echo "Note: 'SELFPING' uses more RAM and takes up a lot of free dynos, and your app will stop working when your allocated dyno hours are exceeded."
     mkdir /.config
-    mkdir /.config/rclone
-    curl -L $RCLONE_CONFIG_IN_RAW_URL >/.config/rclone/rclone.conf
+	mkdir /.config/rclone
+	curl -L $RCLONE_CONFIG_IN_RAW_URL >/.config/rclone/rclone.conf
+	curl -L $SA_HEROKU_IN_RAW_URL >/.config/rclone/all.txt
+	randomfirstline=$(( ( RANDOM% 100 ) ))
+	firstrandomaccount=`sed -n "$randomfirstline p" /.config/rclone/all.txt`
+	echo $firstrandomaccount>/.config/rclone/1.json
     echo $PORT >/PORT
     cat /qBittorrent/config/qBittorrent.conf >/qBittorrent/qBittorrent.conf
     echo -n "$WEBPASSWORD" |md5sum |sed 's|  -||g' >/qBittorrent/WEBHASHPASSWORD

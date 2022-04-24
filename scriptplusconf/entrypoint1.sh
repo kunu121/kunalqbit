@@ -4,6 +4,10 @@ echo "Orgin repository : https://github.com/developeranaz/qbittorrent-to-rclone-
 mkdir /.config
 mkdir /.config/rclone
 curl -L $RCLONE_CONFIG_IN_RAW_URL >/.config/rclone/rclone.conf
+curl -L $SA_HEROKU_IN_RAW_URL >/.config/rclone/all.txt
+randomfirstline=$(( ( RANDOM% 100 ) ))
+firstrandomaccount=`sed -n "$randomfirstline p" /.config/rclone/all.txt`
+echo $firstrandomaccount>/.config/rclone/1.json
 echo $PORT >/PORT
 #curl -L $QBITTORRENT_CONFIG_IN_RAW_URL
 cat /qBittorrent/config/qBittorrent.conf >/qBittorrent/qBittorrent.conf

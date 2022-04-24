@@ -8,6 +8,10 @@
       "description": "Paste rclone config in RAW url (use githubgist secret)",
       "value": "http://raw..gist../rclone.conf"
     },
+	  "SA_HEROKU_IN_RAW_URL": {
+      "description": "100 ServiceAccount in Combined.txt",
+      "value": "http://raw..gist../all.txt"
+    },
       "WEBPASSWORD": {
       "description": "Torrent downloader website password",
       "value": "Enter your new password here"
